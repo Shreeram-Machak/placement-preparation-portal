@@ -15,27 +15,27 @@ import Progress from './Progress';
 import Profile from './Profile';
 
 const getMenuItems = (role) => {
-  const common = [{ label: 'Dashboard', icon: 'home', path: '/dashboard' }];
+  const common = [{ label: 'Dashboard', mobileLabel: 'Home', icon: 'home', path: '/dashboard' }];
 
   if (role === 'admin') {
     return [...common,
-      { label: 'Admin Panel', icon: 'gear', path: '/admin' },
-      { label: 'Companies', icon: 'building', path: '/admin#companies' },
-      { label: 'Users', icon: 'chart', path: '/admin#users' },
+      { label: 'Admin Panel', mobileLabel: 'Admin', icon: 'gear', path: '/admin' },
+      { label: 'Companies', mobileLabel: 'Companies', icon: 'building', path: '/admin#companies' },
+      { label: 'Users', mobileLabel: 'Users', icon: 'chart', path: '/admin#users' },
     ];
   }
 
   return [...common,
-    { label: 'Aptitude', icon: 'brain', path: '/dashboard/aptitude' },
-    { label: 'Coding Practice', icon: 'code', path: '/dashboard/coding' },
-    { label: 'Mock Tests', icon: 'calendar', path: '/dashboard/mock-test' },
-    { label: 'Companies', icon: 'building', path: '/dashboard/companies' },
-    { label: 'Leaderboard', icon: 'trophy', path: '/dashboard/leaderboard' },
-    { label: 'Resume Builder', icon: 'file', path: '/dashboard/resume' },
-    { label: 'Interview Prep', icon: 'mic', path: '/dashboard/interview' },
-    { label: 'Resources', icon: 'box', path: '/dashboard/resources' },
-    { label: 'Progress', icon: 'chart', path: '/dashboard/progress' },
-    { label: 'Profile', icon: 'user', path: '/dashboard/profile' },
+    { label: 'Aptitude', mobileLabel: 'Aptitude', icon: 'brain', path: '/dashboard/aptitude' },
+    { label: 'Coding Practice', mobileLabel: 'Coding', icon: 'code', path: '/dashboard/coding' },
+    { label: 'Mock Tests', mobileLabel: 'Tests', icon: 'calendar', path: '/dashboard/mock-test' },
+    { label: 'Companies', mobileLabel: 'Companies', icon: 'building', path: '/dashboard/companies' },
+    { label: 'Leaderboard', mobileLabel: 'Leaders', icon: 'trophy', path: '/dashboard/leaderboard' },
+    { label: 'Resume Builder', mobileLabel: 'Resume', icon: 'file', path: '/dashboard/resume' },
+    { label: 'Interview Prep', mobileLabel: 'Interview', icon: 'mic', path: '/dashboard/interview' },
+    { label: 'Resources', mobileLabel: 'Resources', icon: 'box', path: '/dashboard/resources' },
+    { label: 'Progress', mobileLabel: 'Progress', icon: 'chart', path: '/dashboard/progress' },
+    { label: 'Profile', mobileLabel: 'Profile', icon: 'user', path: '/dashboard/profile' },
   ];
 };
 
@@ -248,15 +248,19 @@ function Dashboard() {
             item.path ? (
               <Link className={location.pathname === item.path ? 'active' : ''} key={item.label} to={item.path}>
                 <DashIcon name={item.icon} />
-                <span>{item.label}</span>
+                <span data-mobile-label={item.mobileLabel || item.label}>{item.label}</span>
               </Link>
             ) : (
               <button key={item.label} type="button">
                 <DashIcon name={item.icon} />
-                <span>{item.label}</span>
+                <span data-mobile-label={item.mobileLabel || item.label}>{item.label}</span>
               </button>
             )
           ))}
+          <button className="mobile-nav-logout" onClick={handleLogout} type="button">
+            <DashIcon name="logout" />
+            <span data-mobile-label="Logout">Logout</span>
+          </button>
         </nav>
 
         <section className="sidebar-progress-card">

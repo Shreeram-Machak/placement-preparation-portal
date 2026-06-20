@@ -3421,6 +3421,10 @@ a:hover {
   stroke-linejoin: round;
 }
 
+.mobile-nav-logout {
+  display: none;
+}
+
 .sidebar-progress-card {
   margin-top: auto;
   padding: 22px;
@@ -5941,5 +5945,259 @@ a:hover {
   .progress-chart,
   .result-chart {
     min-width: 460px;
+  }
+}
+
+@media (max-width: 720px) {
+  .dashboard-page {
+    display: block;
+    min-height: 100dvh;
+    padding-bottom: calc(92px + env(safe-area-inset-bottom));
+    background: #f2f6ff;
+  }
+
+  .dashboard-main {
+    width: 100%;
+  }
+
+  .dashboard-sidebar {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    z-index: 30;
+    height: auto;
+    max-height: none;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom));
+    overflow: hidden;
+    background: #17212a;
+    border: 0;
+    box-shadow: 0 -10px 28px rgba(15, 23, 42, 0.18);
+  }
+
+  .dashboard-brand,
+  .sidebar-progress-card {
+    display: none;
+  }
+
+  .dashboard-menu {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(76px, 1fr);
+    gap: 6px;
+    margin: 0;
+    padding: 0 2px 2px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    scroll-snap-type: x proximity;
+  }
+
+  .dashboard-menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dashboard-menu button,
+  .dashboard-menu a {
+    flex: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    min-width: 0;
+    min-height: 72px;
+    padding: 7px 6px;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 0;
+    line-height: 1.05;
+    text-align: center;
+    scroll-snap-align: start;
+  }
+
+  .dashboard-menu button:hover,
+  .dashboard-menu button.active,
+  .dashboard-menu a:hover,
+  .dashboard-menu a.active {
+    background: rgba(255, 255, 255, 0.12);
+    transform: none;
+  }
+
+  .dashboard-menu svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  .dashboard-menu button span,
+  .dashboard-menu a span {
+    display: block;
+    width: 100%;
+    color: inherit;
+    font-size: 0;
+    font-weight: 750;
+  }
+
+  .dashboard-menu button span::after,
+  .dashboard-menu a span::after {
+    content: attr(data-mobile-label);
+    display: block;
+    font-size: 11px;
+    line-height: 1.05;
+    white-space: normal;
+  }
+
+  .mobile-nav-logout {
+    display: flex;
+  }
+
+  .dashboard-topbar {
+    position: sticky;
+    top: 0;
+    z-index: 12;
+    min-height: auto;
+    padding: 12px 12px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(12px);
+  }
+
+  .dashboard-search {
+    grid-template-columns: 22px minmax(0, 1fr);
+    min-height: 44px;
+    padding-inline: 12px;
+  }
+
+  .dashboard-search kbd,
+  .notification-button,
+  .dashboard-profile > div:not(.profile-avatar),
+  .dashboard-logout {
+    display: none;
+  }
+
+  .dashboard-profile {
+    width: auto;
+    margin-left: auto;
+  }
+
+  .profile-avatar {
+    width: 42px;
+    height: 42px;
+  }
+
+  .dashboard-content,
+  .dashboard-practice-content {
+    padding: 18px 12px 116px;
+  }
+
+  .dashboard-practice-content .aptitude-page,
+  .dashboard-practice-content .coding-page,
+  .dashboard-practice-content .companies-page,
+  .dashboard-practice-content .resume-builder-page,
+  .dashboard-practice-content .interview-page,
+  .dashboard-practice-content .resources-page,
+  .dashboard-practice-content .progress-page,
+  .dashboard-practice-content .mock-test-page {
+    min-height: auto;
+    padding: 0;
+  }
+
+  .dashboard-heading {
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  .dashboard-heading h1 {
+    font-size: 34px;
+    line-height: 1.08;
+  }
+
+  .dashboard-heading p {
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .date-filter {
+    width: 100%;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+
+  .dashboard-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 108px;
+    padding: 18px;
+    border-radius: 10px;
+  }
+
+  .dashboard-stat-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 10px;
+  }
+
+  .dashboard-stat-card h2 {
+    position: static;
+    margin: 0 0 6px;
+    font-size: 15px;
+  }
+
+  .dashboard-stat-card strong {
+    margin: 0;
+    font-size: 31px;
+  }
+
+  .dashboard-stat-card strong span {
+    display: block;
+    margin: 4px 0 0;
+    font-size: 14px;
+  }
+
+  .dashboard-stat-card small,
+  .sparkline {
+    display: none;
+  }
+
+  .dashboard-grid,
+  .recommended-row > div,
+  .subject-progress {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-card,
+  .recommend-card {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-topbar {
+    padding-inline: 10px;
+  }
+
+  .dashboard-content,
+  .dashboard-practice-content {
+    padding-inline: 10px;
+  }
+
+  .dashboard-heading h1 {
+    font-size: 30px;
+  }
+
+  .dashboard-menu {
+    grid-auto-columns: 74px;
+  }
+
+  .dashboard-menu button,
+  .dashboard-menu a {
+    min-height: 70px;
+  }
+
+  .dashboard-stat-card strong {
+    font-size: 28px;
   }
 }
