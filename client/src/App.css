@@ -6095,7 +6095,7 @@ a:hover {
 
   .dashboard-content,
   .dashboard-practice-content {
-    padding: 18px 12px calc(var(--mobile-nav-height) + 48px + env(safe-area-inset-bottom));
+    padding: 18px 12px calc(var(--mobile-nav-height) + 22px + env(safe-area-inset-bottom));
   }
 
   .dashboard-practice-content .aptitude-page,
@@ -6320,7 +6320,7 @@ a:hover {
   .admin-main {
     width: 100%;
     min-width: 0;
-    padding: 18px 12px calc(126px + env(safe-area-inset-bottom));
+    padding: 18px 12px calc(110px + env(safe-area-inset-bottom));
   }
 
   .admin-header {
@@ -6389,5 +6389,48 @@ a:hover {
   .admin-sidebar nav button {
     flex-basis: 82px;
     min-height: 70px;
+  }
+}
+
+@media (max-width: 720px) {
+  .dashboard-sidebar,
+  .admin-sidebar {
+    height: calc(88px + env(safe-area-inset-bottom));
+    max-height: calc(88px + env(safe-area-inset-bottom));
+    overflow: hidden;
+  }
+
+  .dashboard-menu,
+  .admin-sidebar nav {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    grid-template-columns: none !important;
+    align-items: center;
+    height: 72px;
+    max-height: 72px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .dashboard-menu button,
+  .dashboard-menu a,
+  .admin-sidebar nav a,
+  .admin-sidebar nav button {
+    flex: 0 0 84px !important;
+    width: 84px;
+    max-width: 84px;
+    height: 70px;
+    min-height: 70px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-menu button,
+  .dashboard-menu a,
+  .admin-sidebar nav a,
+  .admin-sidebar nav button {
+    flex-basis: 80px !important;
+    width: 80px;
+    max-width: 80px;
   }
 }
