@@ -4371,7 +4371,7 @@ a:hover {
 .admin-student-view { margin-top: auto; padding: 12px; color: #d4dcf5; border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 9px; text-align: center; font-size: 13px; font-weight: 850; }
 .admin-logout { margin-top: 8px; padding: 12px; color: #ffffff; cursor: pointer; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 9px; font-size: 13px; font-weight: 850; }
 .admin-logout:hover { background: rgba(255, 255, 255, 0.16); }
-.admin-mobile-only { display: none; }
+.admin-sidebar nav .admin-mobile-only { display: none; }
 
 .admin-main {
   min-width: 0;
@@ -6313,7 +6313,7 @@ a:hover {
     white-space: nowrap;
   }
 
-  .admin-mobile-only {
+  .admin-sidebar nav .admin-mobile-only {
     display: flex;
   }
 
