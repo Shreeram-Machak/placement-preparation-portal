@@ -5987,15 +5987,12 @@ a:hover {
   }
 
   .dashboard-menu {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 4px;
     margin: 0;
     padding: 0 2px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    scrollbar-width: none;
-    scroll-snap-type: x proximity;
-    touch-action: pan-x;
+    overflow: visible;
   }
 
   .dashboard-menu::-webkit-scrollbar {
@@ -6004,7 +6001,6 @@ a:hover {
 
   .dashboard-menu button,
   .dashboard-menu a {
-    flex: 0 0 84px;
     flex-direction: column;
     justify-content: center;
     gap: 6px;
@@ -6017,8 +6013,12 @@ a:hover {
     font-size: 0;
     line-height: 1;
     text-align: center;
-    scroll-snap-align: start;
-    white-space: nowrap;
+    white-space: normal;
+  }
+
+  .dashboard-menu a:not(.mobile-primary-nav),
+  .dashboard-menu button:not(.mobile-primary-nav) {
+    display: none;
   }
 
   .dashboard-menu button:hover,
@@ -6051,9 +6051,7 @@ a:hover {
     display: block;
     font-size: 11px;
     line-height: 1.15;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   .mobile-nav-logout {
@@ -6242,14 +6240,11 @@ a:hover {
   }
 
   .admin-sidebar nav {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 4px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
     padding: 0 2px;
-    scrollbar-width: none;
-    scroll-snap-type: x proximity;
-    touch-action: pan-x;
+    overflow: visible;
   }
 
   .admin-sidebar nav::-webkit-scrollbar {
@@ -6259,7 +6254,6 @@ a:hover {
   .admin-sidebar nav a,
   .admin-sidebar nav button {
     display: flex;
-    flex: 0 0 84px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -6274,8 +6268,11 @@ a:hover {
     font-size: 0;
     line-height: 1;
     text-align: center;
-    scroll-snap-align: start;
-    white-space: nowrap;
+    white-space: normal;
+  }
+
+  .admin-sidebar nav .admin-mobile-student {
+    display: none;
   }
 
   .admin-sidebar nav a:hover,
@@ -6309,11 +6306,10 @@ a:hover {
     font-size: 11px;
     font-weight: 750;
     line-height: 1.15;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
   }
 
-  .admin-sidebar nav .admin-mobile-only {
+  .admin-sidebar nav .admin-mobile-logout {
     display: flex;
   }
 
@@ -6402,13 +6398,12 @@ a:hover {
 
   .dashboard-menu,
   .admin-sidebar nav {
-    display: flex !important;
-    flex-wrap: nowrap !important;
-    grid-template-columns: none !important;
+    display: grid !important;
+    grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
     align-items: center;
     height: 72px;
     max-height: 72px;
-    overflow-x: auto;
+    overflow: visible;
     overflow-y: hidden;
   }
 
@@ -6416,9 +6411,8 @@ a:hover {
   .dashboard-menu a,
   .admin-sidebar nav a,
   .admin-sidebar nav button {
-    flex: 0 0 84px !important;
-    width: 84px;
-    max-width: 84px;
+    width: auto;
+    max-width: none;
     height: 70px;
     min-height: 70px;
   }
@@ -6429,8 +6423,7 @@ a:hover {
   .dashboard-menu a,
   .admin-sidebar nav a,
   .admin-sidebar nav button {
-    flex-basis: 80px !important;
-    width: 80px;
-    max-width: 80px;
+    width: auto;
+    max-width: none;
   }
 }

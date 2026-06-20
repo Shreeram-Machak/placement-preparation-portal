@@ -15,7 +15,7 @@ import Progress from './Progress';
 import Profile from './Profile';
 
 const getMenuItems = (role) => {
-  const common = [{ label: 'Dashboard', mobileLabel: 'Home', icon: 'home', path: '/dashboard' }];
+  const common = [{ label: 'Dashboard', mobileLabel: 'Home', icon: 'home', path: '/dashboard', mobilePrimary: true }];
 
   if (role === 'admin') {
     return [...common,
@@ -26,10 +26,10 @@ const getMenuItems = (role) => {
   }
 
   return [...common,
-    { label: 'Aptitude', mobileLabel: 'Aptitude', icon: 'brain', path: '/dashboard/aptitude' },
-    { label: 'Coding Practice', mobileLabel: 'Coding', icon: 'code', path: '/dashboard/coding' },
-    { label: 'Mock Tests', mobileLabel: 'Tests', icon: 'calendar', path: '/dashboard/mock-test' },
-    { label: 'Companies', mobileLabel: 'Companies', icon: 'building', path: '/dashboard/companies' },
+    { label: 'Aptitude', mobileLabel: 'Aptitude', icon: 'brain', path: '/dashboard/aptitude', mobilePrimary: true },
+    { label: 'Coding Practice', mobileLabel: 'Coding', icon: 'code', path: '/dashboard/coding', mobilePrimary: true },
+    { label: 'Mock Tests', mobileLabel: 'Tests', icon: 'calendar', path: '/dashboard/mock-test', mobilePrimary: true },
+    { label: 'Companies', mobileLabel: 'Companies', icon: 'building', path: '/dashboard/companies', mobilePrimary: true },
     { label: 'Leaderboard', mobileLabel: 'Leaders', icon: 'trophy', path: '/dashboard/leaderboard' },
     { label: 'Resume Builder', mobileLabel: 'Resume', icon: 'file', path: '/dashboard/resume' },
     { label: 'Interview Prep', mobileLabel: 'Interview', icon: 'mic', path: '/dashboard/interview' },
@@ -246,7 +246,7 @@ function Dashboard() {
         <nav className="dashboard-menu" aria-label="Dashboard navigation">
           {menuItems.map((item) => (
             item.path ? (
-              <Link className={location.pathname === item.path ? 'active' : ''} key={item.label} to={item.path}>
+              <Link className={`${location.pathname === item.path ? 'active' : ''} ${item.mobilePrimary ? 'mobile-primary-nav' : ''}`} key={item.label} to={item.path}>
                 <DashIcon name={item.icon} />
                 <span data-mobile-label={item.mobileLabel || item.label}>{item.label}</span>
               </Link>
@@ -257,7 +257,7 @@ function Dashboard() {
               </button>
             )
           ))}
-          <button className="mobile-nav-logout" onClick={handleLogout} type="button">
+          <button className="mobile-nav-logout mobile-primary-nav" onClick={handleLogout} type="button">
             <DashIcon name="logout" />
             <span data-mobile-label="Logout">Logout</span>
           </button>

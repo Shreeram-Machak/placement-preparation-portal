@@ -270,7 +270,7 @@ function AdminPanel() {
               <i>{icon}</i><span>{label}</span>
             </Link>
           ))}
-          <Link className="admin-mobile-only" to="/dashboard">
+          <Link className="admin-mobile-only admin-mobile-student" to="/dashboard">
             <i>ST</i><span>Student</span>
           </Link>
           <button className="admin-mobile-only admin-mobile-logout" onClick={handleLogout} type="button">
