@@ -6652,7 +6652,7 @@ a:hover {
   }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   html,
   body,
   #root,
@@ -6664,11 +6664,36 @@ a:hover {
   .admin-main {
     height: auto;
     min-height: 100%;
-    overflow-y: visible;
+    overflow-y: auto;
   }
 
   body {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+  }
+
+  .dashboard-content,
+  .dashboard-practice-content,
+  .admin-main,
+  .coding-page,
+  .aptitude-page,
+  .mock-test-page,
+  .companies-page,
+  .leaderboard-page,
+  .progress-page,
+  .resume-builder-page,
+  .interview-page,
+  .resources-page,
+  .login-page,
+  .register-page {
+    min-height: auto;
+    overflow-y: visible;
+  }
+
+  .admin-table-wrap,
+  .progress-table-wrap,
+  .progress-card,
+  .result-breakdown {
+    overflow-x: auto;
   }
 }
