@@ -5689,3 +5689,257 @@ a:hover {
     font-size: 29px;
   }
 }
+
+@media (max-width: 480px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    overscroll-behavior-y: contain;
+  }
+
+  .app-shell,
+  .dashboard-page,
+  .admin-page {
+    min-width: 0;
+  }
+
+  .dashboard-sidebar,
+  .dashboard-menu,
+  .admin-sidebar nav,
+  .language-tabs,
+  .admin-tabs,
+  .progress-table-wrap,
+  .admin-table-wrap,
+  .progress-card,
+  .result-breakdown,
+  .progress-overview {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .dashboard-sidebar {
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    background: #ffffff;
+    border-bottom: 1px solid #e8edf5;
+  }
+
+  .dashboard-brand {
+    margin-bottom: 10px;
+  }
+
+  .dashboard-menu {
+    margin-inline: -4px;
+    padding-inline: 4px;
+  }
+
+  .dashboard-menu button,
+  .dashboard-menu a {
+    min-width: 112px;
+    min-height: 48px;
+    gap: 7px;
+  }
+
+  .dashboard-menu svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .dashboard-main,
+  .admin-main {
+    min-width: 0;
+  }
+
+  .dashboard-content,
+  .admin-main,
+  .coding-page,
+  .aptitude-page,
+  .mock-test-page,
+  .companies-page,
+  .leaderboard-page,
+  .progress-page,
+  .resume-builder-page,
+  .interview-page,
+  .resources-page {
+    padding-inline: 10px;
+  }
+
+  .dashboard-search input {
+    min-width: 0;
+  }
+
+  .date-filter,
+  .card-title-row button,
+  .start-quiz-button,
+  .start-mock-button,
+  .company-apply-link,
+  .admin-form > button,
+  .admin-report button,
+  .resume-builder-header button,
+  .code-actions button,
+  .quiz-footer button,
+  .mock-question-card footer button {
+    min-height: 48px;
+  }
+
+  .dashboard-stat-card strong {
+    overflow-wrap: anywhere;
+  }
+
+  .sparkline {
+    opacity: 0.65;
+  }
+
+  .line-chart,
+  .progress-chart,
+  .result-chart {
+    min-width: 520px;
+  }
+
+  .progress-table-wrap table,
+  .admin-table-wrap table {
+    min-width: 680px;
+  }
+
+  .coding-workspace {
+    gap: 12px;
+  }
+
+  .problem-list,
+  .problem-description,
+  .coding-editor-column {
+    min-width: 0;
+  }
+
+  .problem-list button {
+    padding: 12px;
+  }
+
+  .code-panel textarea,
+  .custom-input-panel textarea {
+    min-height: 220px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .custom-input-panel textarea {
+    min-height: 110px;
+  }
+
+  .coding-results span,
+  .coding-results strong,
+  pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  .answer-options button {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .question-palette,
+  .mock-test-grid > aside > div {
+    grid-template-columns: repeat(4, minmax(42px, 1fr));
+  }
+
+  .quiz-header,
+  .mock-test-shell header {
+    gap: 10px;
+  }
+
+  .quiz-header time,
+  .mock-test-shell time {
+    align-self: flex-start;
+  }
+
+  .mock-modal-backdrop {
+    padding: 12px;
+  }
+
+  .mock-confirm-modal {
+    width: min(100%, 360px);
+    padding: 20px;
+  }
+
+  .companies-header label,
+  .companies-header input {
+    width: 100%;
+  }
+
+  .companies-grid > article,
+  .leaderboard-card,
+  .progress-card,
+  .resume-form-section,
+  .admin-form {
+    box-shadow: 0 8px 20px rgba(28, 42, 76, 0.05);
+  }
+
+  .leaderboard-row {
+    gap: 8px;
+    padding: 10px;
+  }
+
+  .resume-preview {
+    min-width: 0;
+    padding: 22px 16px;
+  }
+
+  .resume-preview > header h1 {
+    font-size: 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .resume-preview.fresher-template {
+    font-size: 12px;
+  }
+
+  .admin-sidebar nav a {
+    min-width: 68px;
+  }
+
+  .admin-actions {
+    flex-wrap: wrap;
+  }
+
+  .admin-actions button {
+    min-height: 38px;
+  }
+}
+
+@media (max-width: 360px) {
+  .dashboard-menu button,
+  .dashboard-menu a {
+    min-width: 104px;
+    padding-inline: 9px;
+  }
+
+  .dashboard-menu button span,
+  .dashboard-menu a span {
+    font-size: 11px;
+  }
+
+  .dashboard-heading h1,
+  .aptitude-hero h1,
+  .mock-setup-card h1,
+  .companies-header h1,
+  .leaderboard-header h1,
+  .progress-header h1,
+  .resume-builder-header h1,
+  .coding-header h1 {
+    font-size: 26px;
+  }
+
+  .question-palette,
+  .mock-test-grid > aside > div {
+    grid-template-columns: repeat(3, minmax(42px, 1fr));
+  }
+
+  .line-chart,
+  .progress-chart,
+  .result-chart {
+    min-width: 460px;
+  }
+}
