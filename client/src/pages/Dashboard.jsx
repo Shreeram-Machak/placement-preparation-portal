@@ -230,7 +230,7 @@ function Dashboard() {
   const handleLogout = () => {
     if (!window.confirm('Are you sure you want to log out?')) return;
     clearAuthSession();
-    navigate('/login', { replace: true });
+    navigate('/', { replace: true });
   };
 
   return (
