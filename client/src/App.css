@@ -5335,3 +5335,357 @@ a:hover {
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 640px) {
+  html,
+  body,
+  #root {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    font-size: 16px;
+  }
+
+  .app-header {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+
+  .app-header nav,
+  .auth-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .auth-links a,
+  .nav-link {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .dashboard-sidebar {
+    overflow-x: auto;
+    padding: 12px;
+  }
+
+  .dashboard-menu {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scroll-snap-type: x proximity;
+  }
+
+  .dashboard-menu button,
+  .dashboard-menu a {
+    flex: 0 0 auto;
+    min-width: 132px;
+    min-height: 44px;
+    padding: 0 12px;
+    scroll-snap-align: start;
+  }
+
+  .dashboard-topbar {
+    gap: 14px;
+  }
+
+  .dashboard-search {
+    width: 100%;
+  }
+
+  .dashboard-search kbd,
+  .notification-button {
+    display: none;
+  }
+
+  .dashboard-profile {
+    gap: 10px;
+  }
+
+  .dashboard-logout {
+    width: 100%;
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .dashboard-heading h1,
+  .aptitude-hero h1,
+  .mock-setup-card h1,
+  .companies-header h1,
+  .leaderboard-header h1,
+  .progress-header h1,
+  .resume-builder-header h1,
+  .coding-header h1 {
+    font-size: 30px;
+    line-height: 1.08;
+  }
+
+  .dashboard-stat-card,
+  .dashboard-card,
+  .recommend-card,
+  .progress-card,
+  .leaderboard-card,
+  .companies-grid > article,
+  .coding-output-box,
+  .problem-description,
+  .code-panel,
+  .mock-setup-card,
+  .mock-test-shell,
+  .mock-result-card,
+  .aptitude-quiz,
+  .aptitude-result,
+  .quiz-setup-card,
+  .resume-form-section {
+    border-radius: 10px;
+  }
+
+  .line-chart,
+  .progress-chart,
+  .result-chart {
+    min-width: 620px;
+  }
+
+  .progress-card,
+  .progress-table-wrap,
+  .progress-overview,
+  .result-breakdown,
+  .admin-table-wrap {
+    overflow-x: auto;
+  }
+
+  .coding-page,
+  .aptitude-page,
+  .mock-test-page,
+  .companies-page,
+  .leaderboard-page,
+  .progress-page,
+  .resume-builder-page,
+  .interview-page,
+  .resources-page {
+    padding: 18px 12px;
+  }
+
+  .coding-workspace,
+  .mock-test-grid,
+  .mock-test-info,
+  .mock-result-stats,
+  .mock-analytics-grid,
+  .companies-grid,
+  .leaderboard-grid,
+  .progress-summary-grid,
+  .progress-dashboard-grid,
+  .progress-insight-grid,
+  .resume-builder-layout,
+  .admin-form-grid,
+  .admin-overview,
+  .admin-chart-grid,
+  .admin-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .coding-stats-bar,
+  .mock-history-grid,
+  .mock-company-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .problem-list {
+    max-height: none;
+  }
+
+  .problem-list button {
+    min-height: 78px;
+  }
+
+  .language-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .language-tabs button {
+    flex: 0 0 auto;
+  }
+
+  .code-panel textarea {
+    min-height: 260px;
+  }
+
+  .code-actions,
+  .quiz-footer,
+  .mock-question-card footer,
+  .mock-result-actions,
+  .result-actions,
+  .mock-confirm-modal > div,
+  .resume-header-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .code-actions button,
+  .quiz-footer > button,
+  .mock-question-card footer button,
+  .mock-result-actions button,
+  .mock-result-actions a,
+  .result-actions button,
+  .result-actions a,
+  .resume-header-actions button {
+    width: 100%;
+  }
+
+  .question-palette,
+  .mock-test-grid > aside > div {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(42px, 1fr));
+    width: 100%;
+  }
+
+  .answer-options {
+    gap: 10px;
+  }
+
+  .answer-options button {
+    align-items: flex-start;
+    min-height: 54px;
+    text-align: left;
+  }
+
+  .result-breakdown,
+  .result-summary,
+  .mock-setup-columns,
+  .company-directory-meta,
+  .resume-fields.two-column,
+  .register-two-column,
+  .social-login-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .companies-grid > article {
+    grid-template-columns: 46px 1fr;
+    padding: 18px;
+  }
+
+  .company-directory-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+  }
+
+  .company-apply-link {
+    width: 100%;
+    text-align: center;
+  }
+
+  .leaderboard-row {
+    grid-template-columns: 34px 1fr;
+  }
+
+  .leaderboard-row small {
+    grid-column: 2;
+  }
+
+  .admin-page {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-sidebar {
+    position: static;
+    height: auto;
+    padding: 12px;
+  }
+
+  .admin-sidebar nav {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .admin-sidebar nav a {
+    flex: 0 0 76px;
+  }
+
+  .admin-main {
+    padding: 18px 12px 36px;
+  }
+
+  .admin-header,
+  .companies-header,
+  .progress-header,
+  .resume-builder-header,
+  .mock-test-shell header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .admin-profile {
+    text-align: left;
+  }
+
+  .admin-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .admin-tabs button {
+    flex: 0 0 auto;
+  }
+
+  .toast-message {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    max-width: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-menu button,
+  .dashboard-menu a {
+    min-width: 118px;
+    font-size: 12px;
+  }
+
+  .dashboard-content {
+    padding: 16px 10px 24px;
+  }
+
+  .dashboard-stat-card,
+  .dashboard-card,
+  .recommend-card,
+  .progress-card,
+  .leaderboard-card,
+  .companies-grid > article {
+    padding: 16px;
+  }
+
+  .dashboard-stat-card strong {
+    font-size: 30px;
+  }
+
+  .coding-stats-bar,
+  .mock-history-grid,
+  .mock-company-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .question-palette,
+  .mock-test-grid > aside > div {
+    grid-template-columns: repeat(4, minmax(40px, 1fr));
+  }
+
+  .login-card,
+  .register-card {
+    padding: 22px 14px;
+  }
+
+  .login-card-heading h2,
+  .register-card-heading h2 {
+    font-size: 29px;
+  }
+}
