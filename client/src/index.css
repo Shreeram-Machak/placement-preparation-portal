@@ -18,6 +18,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 button,
@@ -29,5 +31,12 @@ select {
 
 #root {
   min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

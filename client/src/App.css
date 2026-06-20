@@ -6651,3 +6651,24 @@ a:hover {
     border-radius: 10px;
   }
 }
+
+@media (max-width: 720px) {
+  html,
+  body,
+  #root,
+  .app-shell,
+  .home-page,
+  .dashboard-page,
+  .admin-page,
+  .dashboard-main,
+  .admin-main {
+    height: auto;
+    min-height: 100%;
+    overflow-y: visible;
+  }
+
+  body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
