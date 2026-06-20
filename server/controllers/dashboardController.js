@@ -26,32 +26,6 @@ const calculateCurrentStreak = (results) => {
   return streak;
 };
 
-const buildSampleProgressResults = () => {
-  const now = new Date();
-  const daysAgo = (days) => {
-    const date = new Date(now);
-    date.setUTCDate(date.getUTCDate() - days);
-    return date;
-  };
-
-  return [
-    { _id: 'sample-aptitude-1', type: 'aptitude', score: 52, totalQuestions: 20, correct: 10, timeTaken: 1260, createdAt: daysAgo(13) },
-    { _id: 'sample-coding-1', type: 'coding', problemId: { title: 'Array Rotation' }, score: 100, totalQuestions: 1, correct: 1, timeTaken: 840, createdAt: daysAgo(12) },
-    { _id: 'sample-mock-1', type: 'mock-test', topic: 'TCS NQT Mock', score: 58, totalQuestions: 25, correct: 14, timeTaken: 3600, createdAt: daysAgo(11) },
-    { _id: 'sample-aptitude-2', type: 'aptitude', score: 64, totalQuestions: 20, correct: 13, timeTaken: 1180, createdAt: daysAgo(10) },
-    { _id: 'sample-coding-2', type: 'coding', problemId: { title: 'Two Sum' }, score: 100, totalQuestions: 1, correct: 1, timeTaken: 760, createdAt: daysAgo(9) },
-    { _id: 'sample-mock-2', type: 'mock-test', topic: 'Infosys Springboard', score: 66, totalQuestions: 25, correct: 17, timeTaken: 3420, createdAt: daysAgo(8) },
-    { _id: 'sample-aptitude-3', type: 'aptitude', score: 72, totalQuestions: 20, correct: 14, timeTaken: 1090, createdAt: daysAgo(7) },
-    { _id: 'sample-coding-3', type: 'coding', problemId: { title: 'Valid Parentheses' }, score: 100, totalQuestions: 1, correct: 1, timeTaken: 920, createdAt: daysAgo(6) },
-    { _id: 'sample-coding-4', type: 'coding', problemId: { title: 'Binary Search' }, score: 100, totalQuestions: 1, correct: 1, timeTaken: 690, createdAt: daysAgo(5) },
-    { _id: 'sample-mock-3', type: 'mock-test', topic: 'Wipro Elite Mock', score: 74, totalQuestions: 25, correct: 19, timeTaken: 3300, createdAt: daysAgo(4) },
-    { _id: 'sample-aptitude-4', type: 'aptitude', score: 81, totalQuestions: 20, correct: 16, timeTaken: 1010, createdAt: daysAgo(3) },
-    { _id: 'sample-coding-5', type: 'coding', problemId: { title: 'Merge Sorted Lists' }, score: 100, totalQuestions: 1, correct: 1, timeTaken: 880, createdAt: daysAgo(2) },
-    { _id: 'sample-mock-4', type: 'mock-test', topic: 'Amazon Placement Mock', score: 82, totalQuestions: 25, correct: 21, timeTaken: 3180, createdAt: daysAgo(1) },
-    { _id: 'sample-aptitude-5', type: 'aptitude', score: 86, totalQuestions: 20, correct: 17, timeTaken: 980, createdAt: daysAgo(0) },
-  ];
-};
-
 const percentageForResults = (results) => {
   const correct = results.reduce((sum, result) => sum + result.correct, 0);
   const total = results.reduce((sum, result) => sum + result.totalQuestions, 0);
@@ -185,7 +159,7 @@ const getProgressData = async (req, res) => {
       .sort({ createdAt: 1 })
       .lean();
 
-    const analyticsResults = results.length ? results : buildSampleProgressResults();
+    const analyticsResults = results;
 
     const summaryFor = (testType) => {
       const typeResults = analyticsResults.filter((result) => result.type === testType);
@@ -323,10 +297,10 @@ const getProgressData = async (req, res) => {
       mockTestScores,
       weeklyImprovement,
       recentAttempts,
-      isSampleData: !results.length,
+      isSampleData: false,
       recommendation: results.length
         ? `Focus next on ${weakestModule === 'mockTests' ? 'mock tests' : weakestModule} to improve your overall readiness.`
-        : 'Sample progress is shown here. Complete an aptitude test, coding problem, or mock test to replace it with your own analytics.',
+        : 'Complete an aptitude test, coding problem, or mock test to start building your progress analytics.',
     });
   } catch (error) {
     res.status(500).json({ message: 'Unable to load progress analytics.' });

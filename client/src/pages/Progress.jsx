@@ -31,10 +31,24 @@ function Progress() {
 
   useEffect(() => {
     let active = true;
-    axios.get(API_URL, { headers: { Authorization: `Bearer ${getAuthToken()}` } })
-      .then(({ data }) => { if (active) setProgress(data); })
-      .catch((error) => { if (active) setMessage(error.response?.data?.message || 'Unable to load progress.'); });
-    return () => { active = false; };
+    const loadProgress = () => {
+      axios.get(API_URL, { headers: { Authorization: `Bearer ${getAuthToken()}` } })
+        .then(({ data }) => {
+          if (!active) return;
+          setProgress(data);
+          setMessage('');
+        })
+        .catch((error) => {
+          if (active) setMessage(error.response?.data?.message || 'Unable to load progress.');
+        });
+    };
+
+    loadProgress();
+    const refreshTimer = window.setInterval(loadProgress, 30000);
+    return () => {
+      active = false;
+      window.clearInterval(refreshTimer);
+    };
   }, []);
 
   if (!progress) return <main className="progress-page"><p className={`progress-message ${message ? 'error' : ''}`}>{message || 'Loading your progress...'}</p></main>;
@@ -42,7 +56,6 @@ function Progress() {
   return (
     <main className="progress-page">
       <header className="progress-header"><div><span>Performance Center</span><h1>Your Progress</h1><p>Track accuracy, consistency, time spent, and improvement across every practice module.</p></div><div className="readiness-badge"><strong>{progress.overview.overallAccuracy}%</strong><span>Overall Accuracy</span></div></header>
-      {progress.isSampleData && <p className="progress-message">Showing sample progress data until you complete your first saved activity.</p>}
 
       <section className="progress-summary-grid">
         <article><span>Total Attempts</span><strong>{progress.overview.attempts}</strong><small>Completed activities</small></article>
