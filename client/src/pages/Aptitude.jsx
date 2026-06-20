@@ -2,9 +2,10 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
+import { API_BASE_URL } from '../utils/api';
 import { getAuthToken } from '../utils/auth';
 
-const API_URL = 'http://localhost:5000/api/aptitude';
+const API_URL = `${API_BASE_URL}/api/aptitude`;
 const SECONDS_PER_QUESTION = 60;
 const resultColors = ['#20a77c', '#e34a66', '#f0a126'];
 

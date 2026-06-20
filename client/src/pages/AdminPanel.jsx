@@ -14,9 +14,10 @@ import {
   YAxis,
 } from 'recharts';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../utils/api';
 import { clearAuthSession, getAuthToken } from '../utils/auth';
 
-const API_URL = 'http://localhost:5000/api/admin';
+const API_URL = `${API_BASE_URL}/api/admin`;
 const adminSections = [
   ['dashboard', 'Dashboard', 'D', '/admin/dashboard'],
   ['users', 'Users', 'U', '/admin/users'],

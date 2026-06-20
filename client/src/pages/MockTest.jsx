@@ -1,9 +1,10 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { API_BASE_URL } from '../utils/api';
 import { getAuthToken } from '../utils/auth';
 
-const API_URL = 'http://localhost:5000/api/mock-tests';
+const API_URL = `${API_BASE_URL}/api/mock-tests`;
 const companyOptions = [
   { name: 'General Placement', mark: 'GP', tone: 'general', description: 'A balanced placement simulation covering the core sections used across major recruiters.' },
   { name: 'TCS NQT', mark: 'TCS', tone: 'tcs', description: 'Practice the aptitude, reasoning, verbal, and technical mix commonly seen in TCS NQT.' },

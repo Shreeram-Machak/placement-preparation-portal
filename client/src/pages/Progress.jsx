@@ -12,9 +12,10 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+import { API_BASE_URL } from '../utils/api';
 import { getAuthToken } from '../utils/auth';
 
-const API_URL = 'http://localhost:5000/api/dashboard/progress';
+const API_URL = `${API_BASE_URL}/api/dashboard/progress`;
 const moduleLabels = { aptitude: 'Aptitude', coding: 'Coding', mockTests: 'Mock Tests' };
 
 const formatDuration = (seconds) => {

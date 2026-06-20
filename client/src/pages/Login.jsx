@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../utils/api';
 import { getAuthUser, isAuthenticated } from '../utils/auth';
 
 const loginFeatures = [
@@ -100,7 +101,7 @@ function Login() {
     try {
       setIsSubmitting(true);
 
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', {
+      const { data } = await axios.post(`${API_BASE_URL}/api/auth/login`, {
         email: formData.email,
         password: formData.password,
       });

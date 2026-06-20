@@ -79,7 +79,7 @@ npm run dev
 Default URLs:
 
 - Frontend: `http://localhost:5173`
-- Backend API: `http://localhost:5000`
+- Backend API: local Express server on port `5000`, or your deployed Render API URL in production
 
 ## Build
 
@@ -105,6 +105,7 @@ npm run build
 
 ## Notes
 
-- The frontend currently calls the backend at `http://localhost:5000`.
+- The frontend reads its API base URL from `VITE_API_URL`.
+- For Vercel, set `VITE_API_URL=https://placement-preparation-portal-3sso.onrender.com`.
 - Keep `.env`, `node_modules`, `dist`, and `build` out of Git.
 - Run the backend before using protected dashboard features.

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../utils/api';
 import { getAuthToken, getAuthUser } from '../utils/auth';
 
-const API_URL = 'http://localhost:5000/api/dashboard/progress';
+const API_URL = `${API_BASE_URL}/api/dashboard/progress`;
 
 function Profile() {
   const [user] = useState(() => getAuthUser() || { name: 'Student', email: '', role: 'student' });

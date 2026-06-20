@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../utils/api';
 import { getAuthToken } from '../utils/auth';
 
-const API_URL = 'http://localhost:5000/api/interview';
+const API_URL = `${API_BASE_URL}/api/interview`;
 const questionBank = {
   HR: [
     ['Tell me about yourself.', 'Connect your education, relevant skills, projects, and career goal in about 60-90 seconds.'],

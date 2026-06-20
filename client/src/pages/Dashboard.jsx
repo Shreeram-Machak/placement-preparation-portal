@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../utils/api';
 import { clearAuthSession, getAuthToken } from '../utils/auth';
 import Aptitude from './Aptitude';
 import Coding from './Coding';
@@ -185,7 +186,7 @@ function Dashboard() {
 
     setIsLoading(true);
     axios
-      .get('http://localhost:5000/api/dashboard', {
+      .get(`${API_BASE_URL}/api/dashboard`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

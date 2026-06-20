@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_BASE_URL } from '../utils/api';
 import { getAuthToken } from '../utils/auth';
 
-const API_URL = 'http://localhost:5000/api/leaderboard';
+const API_URL = `${API_BASE_URL}/api/leaderboard`;
 
 const sections = [
   ['aptitude', 'Top Aptitude Scores', 'aptitudeScore', '%'],
